@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './assets/css/App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
+
+import Login from './assets/components/Login';
+import Registro from './assets/components/Registro';
+import Main from './assets/components/Main';
+import NotFound from './assets/components/NotFound';
+import Foother from './assets/components/Foother';
+import Navbar from './assets/components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />}/>
+            <Route path="/register" element={<Registro />}/>
+            <Route path="/main" element={<Main />}/>
+            <Route path="/foother" element={<Foother />}/>
+            <Route path="/nav" element={<Navbar />}/>
+            <Route path="/*" element={<NotFound />}/>
+          </Routes>  
+        </BrowserRouter>
+        
+        
+    </React.Fragment>
   );
 }
 

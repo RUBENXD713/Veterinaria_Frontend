@@ -23,6 +23,7 @@ function App() {
             <Route path="/main" element={<Main />}/>
             <Route path="/foother" element={<Foother />}/>
             <Route path="/nav" element={<Navbar />}/>
+            <Route path="/test" exact render ={props=> (<Main {...props} />)}/>
             <Route path="/*" element={<NotFound />}/>
           </Routes>  
         </BrowserRouter>

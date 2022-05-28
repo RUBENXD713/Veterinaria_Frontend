@@ -2,6 +2,8 @@ import React from "react";
 import "../css/table.css";
 import Foother from './Foother';
 
+
+
 class Main extends React.Component {
 
 

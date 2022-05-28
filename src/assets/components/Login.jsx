@@ -2,9 +2,8 @@ import React from "react";
 import '../css/Login.css';
 import axios  from "axios";
 import {Apiurl} from "../services/apirest";
-
-
 import logo from "../img/Logo.jpg";
+
 
 class Login extends React.Component {
 
@@ -30,10 +29,25 @@ class Login extends React.Component {
     }
 
     manejadorBoton=()=>{
+        //const navigation = useNavigate();
         let url = Apiurl+"login";
         console.log(url);
         axios.post(url, this.state.form).then(response => {
-            console.log(response);
+            console.log(response.data);
+            if(response.data === "credenciales incorrectas"){
+                console.log("error");
+                this.setState({
+                    error : true,
+                    errorMessage : "Error!! credenciales incorrectas",
+                })
+            }else{
+                localStorage.setItem("token", response.data.token);
+                console.log("paso");
+                
+            }
+            
+        }).catch(error => {
+            console.log(error);
         })
     } 
 
@@ -55,10 +69,14 @@ class Login extends React.Component {
                     <input type="submit" className="fadeIn fourth" value="Log In" onClick={this.manejadorBoton}/>
                     </form>
 
-
-                    <div id="formFooter">
-                    <a className="underlineHover" href="/register">Registrar</a>
-                    </div>
+                    { this.state.error === true &&
+                        <div id="formFooter">
+                            <div class="alert alert-danger" role="alert">
+                                {this.state.errorMessage}
+                            </div>                    
+                        </div>
+                    }
+                    
 
                 </div>
                 </div>    

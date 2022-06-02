@@ -23,7 +23,8 @@ function App() {
             <Route path="/main" element={<Main />}/>
             <Route path="/foother" element={<Foother />}/>
             <Route path="/nav" element={<Navbar />}/>
-            <Route path="/*" element={<NotFound />}/>
+            <Route path="/*" element={<NotFound />} />
+            <Route path="/cliente" element={<Cliente/>}/>
           </Routes>  
         </BrowserRouter>
         

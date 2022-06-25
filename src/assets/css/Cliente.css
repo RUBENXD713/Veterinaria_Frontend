@@ -1,0 +1,39 @@
+.Container{
+    margin-top: 10px;
+}
+
+#title{
+    margin-top: 55px;
+    font-size: 35px;
+    font-style: unset;
+}
+#btn_edit{
+    background-color: blue;
+    color: azure;
+    margin-right: 5px;
+}
+
+#btn_delete{
+    background-color: red;
+    color: azure;
+}
+
+#btn_add{
+    background-color: rgb(35, 185, 35);
+    color: aliceblue;
+    height: auto;
+    width: auto;
+    margin-top: 30px;
+    margin-left: 65px;
+}
+ .input-form{
+    text-align: right;
+ }
+
+ #thead{
+    font-size: 15px;
+ }
+
+ #tbody{
+    font-size: 12px;
+ }

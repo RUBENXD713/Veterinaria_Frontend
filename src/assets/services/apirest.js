@@ -1,0 +1,1 @@
+export const Apiurl = "http://192.168.127.27:8000/api/";
